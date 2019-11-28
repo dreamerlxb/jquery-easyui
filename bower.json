@@ -1,0 +1,21 @@
+{
+  "name": "jquery-easyui",
+  "version": "1.8.8",
+  "dependencies": {
+    "jquery": "~3.4.1"
+  },
+  "authors": [
+    "jeasyui <http://www.jeasyui.com/>"
+  ],
+  "description": "easyui lib for git and bower。",
+  "main": "jquery.easyui.min.js",
+  "keywords": [
+    "easyui",
+    "jeasyui",
+    "jquery-easyui",
+    "jquery.easyui",
+    "1.8.8"
+  ],
+  "license": "GPL-3.0",
+  "homepage": "http://www.jeasyui.com/index.php"
+}
