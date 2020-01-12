@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.9.1
+ * EasyUI for jQuery 1.9.2
  * 
  * Copyright (c) 2009-2020 www.jeasyui.com. All rights reserved.
  *
@@ -387,6 +387,7 @@
 		},
 		moveTo: function(jq, date){
 			return jq.each(function(){
+				var opts = $(this).calendar('options');
 				if (!date){
 					var now = new opts.Date();
 					$(this).calendar({
@@ -396,7 +397,6 @@
 					});
 					return;
 				}
-				var opts = $(this).calendar('options');
 				if (opts.validator.call(this, date)){
 					var oldValue = opts.current;
 					$(this).calendar({

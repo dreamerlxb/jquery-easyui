@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.9.1
+ * EasyUI for jQuery 1.9.2
  * 
  * Copyright (c) 2009-2020 www.jeasyui.com. All rights reserved.
  *
@@ -203,7 +203,9 @@
 				var opts = $(this).datebox('options');
 				var value = opts.value;
 				if (value){
-					value = opts.formatter.call(this, opts.parser.call(this, value));
+					var date = opts.parser.call(this, value);
+					value = opts.formatter.call(this, date);
+					$(this).datebox('calendar').calendar('moveTo', date);
 				}
 				$(this).combo('initValue', value).combo('setText', value);
 			});
@@ -218,6 +220,20 @@
 				var opts = $(this).datebox('options');
 				$(this).datebox('setValue', opts.originalValue);
 			});
+		},
+		setDate: function(jq, date){
+			return jq.each(function(){
+				var opts = $(this).datebox('options');
+				$(this).datebox('calendar').calendar('moveTo', date);
+				setValue(this, date ? opts.formatter.call(this, date) : '');
+			});
+		},
+		getDate: function(jq){
+			if (jq.datebox('getValue')){
+				return jq.datebox('calendar').calendar('options').current;
+			} else {
+				return null;
+			}
 		}
 	};
 	
@@ -238,7 +254,6 @@
 			enter:function(e){doEnter(this)},
 			query:function(q,e){doQuery(this, q)}
 		},
-		
 		currentText:'Today',
 		closeText:'Close',
 		okText:'Ok',

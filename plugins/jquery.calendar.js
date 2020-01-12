@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.9.1
+ * EasyUI for jQuery 1.9.2
  * 
  * Copyright (c) 2009-2020 www.jeasyui.com. All rights reserved.
  *
@@ -360,12 +360,12 @@ _1(this,_40);
 });
 },moveTo:function(jq,_41){
 return jq.each(function(){
+var _42=$(this).calendar("options");
 if(!_41){
 var now=new _42.Date();
 $(this).calendar({year:now.getFullYear(),month:now.getMonth()+1,current:_41});
 return;
 }
-var _42=$(this).calendar("options");
 if(_42.validator.call(this,_41)){
 var _43=_42.current;
 $(this).calendar({year:_41.getFullYear(),month:_41.getMonth()+1,current:_41});
