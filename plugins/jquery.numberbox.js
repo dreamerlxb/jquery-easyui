@@ -1,5 +1,5 @@
 /**
- * EasyUI for jQuery 1.9.2
+ * EasyUI for jQuery 1.9.4
  * 
  * Copyright (c) 2009-2020 www.jeasyui.com. All rights reserved.
  *
@@ -112,7 +112,7 @@ tmp.remove();
 if(!c){
 return true;
 }
-if(c=="-"&&_19.min>=0){
+if(c=="-"&&_19.min!=null&&_19.min>=0){
 return false;
 }
 if(c=="-"||c==_19.decimalSeparator){
